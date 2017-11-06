@@ -1,0 +1,26 @@
+{
+  "name": "windows-shortcut-maker",
+  "version": "0.0.1",
+  "description": "Make desktop file shortcuts for Windows easily.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phtdacosta/windows-shortcut-maker.git"
+  },
+  "keywords": [
+    "windows",
+    "shortcut",
+    "desktop",
+    "link"
+  ],
+  "author": "Pedro Costa <pedrohenriqueteodorodacosta@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phtdacosta/windows-shortcut-maker/issues"
+  },
+  "homepage": "https://github.com/phtdacosta/windows-shortcut-maker#readme",
+  "dependencies": {}
+}

@@ -33,7 +33,7 @@ For advanced use, further information can be set:
 ```js
 const shortcutMaker = require('windows-shortcut-maker');
 
- // The base file path is set
+// The base file path is set
 const filePath = "C:\\Program Files\\GIMP 2\\bin\\gimp-2.8.exe";
 // A name is given for the shortcut
 const shortcutName = "GIMP 2.8 Shortcut Example";

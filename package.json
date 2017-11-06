@@ -1,6 +1,6 @@
 {
   "name": "windows-shortcut-maker",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Make desktop file shortcuts for Windows easily.",
   "main": "index.js",
   "scripts": {

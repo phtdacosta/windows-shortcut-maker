@@ -39,13 +39,15 @@ const filePath = "C:\\Program Files\\GIMP 2\\bin\\gimp-2.8.exe";
 const shortcutName = "GIMP 2.8 Shortcut Example";
 // A description is given for the shortcut
 const shortcutDesc = "It is a description example for the shortcut file!";
+// Sets where the shortcut current working directory should be
+const shortcutSCWD = "C:\\Program Files\\GIMP 2\\bin\\";
 // Any icon file (including the base file icon) could be used for the shortcut
 const shortcutIcon = "C:\\Program Files\\GIMP 2\\bin\\gimp-2.8.exe";
 
 // Calling the synchronous function
 // For now, only the synchronous function is available
 try {
-    shortcutMaker.makeSync(filePath, shortcutName, shortcutDesc, shortcutIcon);
+    shortcutMaker.makeSync(filePath, shortcutName, shortcutDesc, shortcutSCWD, shortcutIcon);
 } catch (e) {
     console.error(e);
 }

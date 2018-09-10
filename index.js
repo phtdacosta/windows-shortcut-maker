@@ -14,7 +14,7 @@ const makeSync = (options) => {
     if (isString(options.filepath) === false) throw new Error('Filepath is not a string')
     const rawName = getName(options.filepath).split('.')[0]
     if (fs.existsSync(options.filepath) === false) throw new Error('File does not exist')
-    if (isString(options.filename) === false) options.filename = rawName
+    if (isString(options.lnkName) === false) options.lnkName = rawName
     if (isString(options.lnkArgs) === false) options.lnkArgs = ''
     if (isString(options.lnkDes) === false) options.lnkDes = rawName
     if (isString(options.lnkCwd) === false) options.lnkCwd = ''
@@ -25,7 +25,7 @@ const makeSync = (options) => {
         'wscript', 
         [__dirname + '\\scripts\\lnk.vbs',
         options.filepath,
-        options.filename,
+        options.lnkName,
         options.lnkArgs,
         options.lnkDes,
         options.lnkCwd,

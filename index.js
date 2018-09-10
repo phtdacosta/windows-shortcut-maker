@@ -1,23 +1,41 @@
-const child_process = require('child_process');
-const fs = require('fs');
+const child_process = require('child_process'),
+    fs = require('fs')
 
-// Useful function to test if certain data is actaully empty
-function isEmpty(value) {
-    return (value == null || value.length === 0 || typeof value === typeof undefined);
+const isString = (variable) => {
+    return (typeof variable === 'string' || Object.prototype.toString.call(variable) === '[object String]')
 }
 
 // Used extract the file name from a given file path
-function getName(path) {
-    return path.split('\\').pop().split('/').pop();
+const getName = (path) => {
+    return path.split('\\').pop().split('/').pop()
 }
 
-// For now it works only in a synchronous way
-// Asynchronous version of the function needs further development
-exports.makeSync = function (file, name, desc, scwd, icon) {
-    if (typeof file !== 'string' || fs.existsSync(file) === false) throw new Error('Invalid base file');
-    if (typeof name !== 'string') name = getName(file) + ' - Shortcut';
-    if (typeof desc !== 'string') desc = getName(file) + ' - Shortcut';
-    if (typeof scwd !== 'string') scwd = '';
-    if (typeof icon !== 'string') icon = file;
-    child_process.execFileSync(__dirname + '\\exe.win-amd64-2.7\\run.exe', [file, name, desc, scwd, icon]);
+const makeSync = (options) => {
+    if (isString(options.filepath) === false) throw new Error('Filepath is not a string')
+    const rawName = getName(options.filepath).split('.')[0]
+    if (fs.existsSync(options.filepath) === false) throw new Error('File does not exist')
+    if (isString(options.filename) === false) options.filename = rawName
+    if (isString(options.lnkArgs) === false) options.lnkArgs = ''
+    if (isString(options.lnkDes) === false) options.lnkDes = rawName
+    if (isString(options.lnkCwd) === false) options.lnkCwd = ''
+    if (isString(options.lnkIco) === false) options.lnkIco = filepath
+    if (isString(options.lnkWin) === false) options.lnkWin = 1
+    if (isString(options.lnkHtk) === false) options.lnkHtk = ''
+    child_process.spawnSync(
+        'wscript', 
+        [__dirname + '\\scripts\\lnk.vbs',
+        options.filepath,
+        options.filename,
+        options.lnkArgs,
+        options.lnkDes,
+        options.lnkCwd,
+        options.lnkIco,
+        options.lnkWin,
+        options.lnkHtk
+        ]
+    )
+}
+
+module.exports = {
+    makeSync: makeSync
 }

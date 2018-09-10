@@ -1,7 +1,7 @@
 {
   "name": "windows-shortcut-maker",
-  "version": "0.0.3",
-  "description": "Make desktop file shortcuts for Windows easily.",
+  "version": "0.0.4",
+  "description": "Make Windows shortcuts using this native module with no external dependencies.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,11 +10,12 @@
     "type": "git",
     "url": "git+https://github.com/phtdacosta/windows-shortcut-maker.git"
   },
-  "keywords": [
+  "keywords": [    
     "windows",
     "shortcut",
-    "desktop",
-    "link"
+    "native",
+    "lightweight",
+    "lnk"
   ],
   "author": "Pedro Costa <pedrohenriqueteodorodacosta@gmail.com>",
   "license": "ISC",

@@ -17,7 +17,7 @@ const makeSync = (options) => {
     if (isString(options.lnkArgs) === false) options.lnkArgs = ''
     if (isString(options.lnkDes) === false) options.lnkDes = rawName
     if (isString(options.lnkCwd) === false) options.lnkCwd = ''
-    if (isString(options.lnkIco) === false) options.lnkIco = filepath
+    if (isString(options.lnkIco) === false) options.lnkIco = options.filepath
     if (isString(options.lnkWin) === false) options.lnkWin = 4
     if (isString(options.lnkHtk) === false) options.lnkHtk = ''
     child_process.spawnSync(

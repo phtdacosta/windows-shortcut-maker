@@ -22,6 +22,7 @@ sub FileToLnk()
   objLink.TargetPath = strFilepath
   objLink.WindowStyle = strLinkWin
   objLink.WorkingDirectory = strLinkCwd
+  objLink.IconLocation = strLinkIco
   objLink.Hotkey = strLinkHtk
   objLink.Save
 end sub
